@@ -33,7 +33,7 @@
 $GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['name']        = array('Name', 'Please enter a picture name.');
 $GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['singleSRC']   = array('Source file', 'Please select a file from the files directory.');
 $GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['alt']         = array('Alternate text', 'An accessible website should always provide an alternate text for images and movies with a short description of their content.');
-$GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['imageUrl']    = array('Image link target', 'Associate a page with an image. You must activate the option “links” in the preferences of this Coin Slider. For external links, don\'t forget "http://".');
+$GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['imageUrl']    = array('Image link target', 'Associate a page with an image. You must activate the option “links” in the preferences of this FlexSlider. For external links, don\'t forget "http://".');
 $GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['published']   = array('Publish picture', 'Make the picture visible on the slideshow.');
 $GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['description'] = array('Image description', 'Here you can enter a short text that will be displayed below the image.');
 

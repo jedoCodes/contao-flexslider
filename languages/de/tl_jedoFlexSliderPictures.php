@@ -33,7 +33,7 @@
 $GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['name']        = array('Titel', 'Bitte geben Sie dem Bild einen Titel, dieser wird in der Beschreibung angezeigt.');
 $GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['singleSRC']   = array('Quell-Datei', 'Bitte wählen Sie eine Datei aus dem Verzeichnisbaum.');
 $GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['alt']         = array('Alternativer Text', 'Eine barrierefreie Webseite sollte immer einen alternativen Text für Bilder und Filme mit einer kurzen Beschreibung deren Inhalt enthalten.');
-$GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['imageUrl']    = array('Bildlink-Adresse', 'Verknüpfen Sie das Bild mit einer Seite. Die Option "Links" in den Eigenschaften dieses Coin-Sliders muss dazu aktiviert sein. Externe Links benötigen den Prefix "http://".');
+$GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['imageUrl']    = array('Bildlink-Adresse', 'Verknüpfen Sie das Bild mit einer Seite. Die Option "Links" in den Eigenschaften dieses FlexSliders muss dazu aktiviert sein. Externe Links benötigen den Prefix "http://".');
 $GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['published']   = array('Bild veröffentlichen', 'Dieses Bild in der Diashow anzeigen.');
 $GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['size']        = array('Bild-Breite und -Höhe', 'Hier können Sie die Bildabmessungen und den Zuschneide-Modus einstellen.');
 $GLOBALS['TL_LANG']['tl_jedoFlexSliderPictures']['description'] = array('Bildbeschreibung', 'Hier können Sie einen kurzen Text eingeben, welcher unterhalb des Bildes angezeigt wird.');

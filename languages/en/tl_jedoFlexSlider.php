@@ -32,7 +32,7 @@
  * Fields
  */
 $GLOBALS['TL_LANG']['tl_jedoFlexSlider']['title'] = array('Title', 'Please enter the slideshow title.');
-$GLOBALS['TL_LANG']['tl_jedoFlexSlider']['alias'] = array('Alias', 'This alias is a unique reference to the Coin Slider which can be called instead of its numeric ID.');
+$GLOBALS['TL_LANG']['tl_jedoFlexSlider']['alias'] = array('Alias', 'This alias is a unique reference to the FlexSlider which can be called instead of its numeric ID.');
 $GLOBALS['TL_LANG']['tl_jedoFlexSlider']['size']        = array('Image width and height', 'Here you can set the image dimensions and the resize mode.');
 $GLOBALS['TL_LANG']['tl_jedoFlexSlider']['animation'] = array('Animation Type', 'elect your animation type, "fade" or "slide"');
 $GLOBALS['TL_LANG']['tl_jedoFlexSlider']['slideDirection'] = array('Sliding Direction', 'Select the sliding direction, "horizontal" or "vertical"');
