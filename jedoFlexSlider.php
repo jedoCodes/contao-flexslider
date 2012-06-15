@@ -84,17 +84,18 @@ class jedoFlexSlider extends Frontend {
      * @access public
      * @return boolean
      */
-    public function ifJQuery(){
+    public function ifjQuery(){
         
         $this->import('Database');
         
         if($this->Database->fieldExists('usejquery','tl_layout')) {
             
-            $ifJQuery = true;
+            $ifjQuery = true;
         }
-        else $ifJQuery = false;
-        
-        return $ifJQuery;
+        else { 
+	$ifjQuery = false;
+        }
+        return $ifjQuery;
     }
 }
 

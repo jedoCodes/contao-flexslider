@@ -98,8 +98,8 @@ class ModuleFlexSlider extends Module {
 
         if (TL_MODE == 'FE') {
             $FlexSlider = new jedoFlexSlider();
-            if(!$FlexSlider->ifJQuery())
-            $GLOBALS['TL_JAVASCRIPT'][jedoFlexSlider] = 'system/modules/jedojQueryFlexSlider/html/jquery-1.7.2.min.js';
+            if(!$FlexSlider->ifjQuery())
+            $GLOBALS['TL_JAVASCRIPT'][jedoFlexSlider] = 'system/modules/jedoFlexSlider/html/jquery-1.7.2.min.js';
         }
 
         return parent::generate();
