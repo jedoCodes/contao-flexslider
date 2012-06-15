@@ -1,0 +1,58 @@
+<?php
+$GLOBALS['TL_CSS']['jedoFlexiSlider'] = 'system/modules/jedoFlexSlider/html/themes/'.$this->sliderdesign.'/flexislider.css';
+$GLOBALS['TL_JAVASCRIPT']['jedoFlexiSlider'] = 'system/modules/jedoFlexSlider/html/jquery.flexslider-min.js';
+?>
+<div  class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<?php if ($this->headline): ?>
+	<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+<?php endif; ?>
+<div  class="slider-wrapper block">
+<?php if ($this->ifPictures == true): ?>
+<?php foreach ($this->preferences as $preferences): ?><?php endforeach; ?>
+<div class="slider-<?php echo $preferences['id']; ?> flexslider">
+<?php if($preferences['ribbon'] == "true"): ?><div class="ribbon"></div><?php endif; ?>
+<ul class="slides">
+<?php foreach ($this->pictures as $pictures): ?>
+<li><?php if ($pictures['imageUrl']): ?><a href="<?php echo $pictures['imageUrl'] ?>"><?php endif; ?><img alt="<?php echo $pictures['alt'] ?>" src="<?php echo $pictures['singleSRC'] ?>" /><?php if($preferences['caption'] == "true"): ?><?php if ($pictures['description']): ?><div class="flex-caption"><h4><?php echo $pictures['name'] ?></h4><?php echo $pictures['description'] ?></div><?php endif; ?><?php endif; ?><?php if ($pictures['imageUrl']): ?></a><?php endif; ?></li>
+<?php endforeach; ?>
+</ul>
+</div>
+</div>
+<?php else: echo '<p><strong>' . $GLOBALS['TL_LANG']['MSC']['noImages'] . '</strong></p><br />'; ?>
+<?php endif; ?>
+</div>
+</div>
+
+<?php
+$GLOBALS['TL_MOOTOOLS']['jedoFlexiSlider'] = '<script type="text/javascript">
+jQuery(window).load(function() {
+    $(".slider-'.$preferences["id"].'").flexslider({
+        animation           : "'.$preferences["animation"].'",
+        slideDirection      : "'.$preferences["slideDirection"].'",
+        slideshow           :  '.$preferences["slideshow"].',
+        slideshowSpeed      :  '.$preferences["slideshowSpeed"].',
+        animationDuration   :  '.$preferences["animationDuration"].',
+        directionNav        :  '.$preferences["directionNav"].',
+        controlNav          :  '.$preferences["controlNav"].',
+        keyboardNav         : '. $preferences["keyboardNav"].', 
+        mousewheel          :  '.$preferences["mousewheel"].',
+        prevText            : "'.$GLOBALS['TL_LANG']['MSC']['prevText'].'", 
+        nextText            : "'.$GLOBALS['TL_LANG']['MSC']['nextText'].'",
+        pausePlay           :  '.$preferences["pausePlay"].',
+        pauseText           : "'.$GLOBALS['TL_LANG']['MSC']['pauseText'].'",
+        playText            : "'.$GLOBALS['TL_LANG']['MSC']['playText'].'", 
+        randomize           :  '.$preferences["randomize"].', 
+        slideToStart        :  '.$preferences["slideToStart"].',
+        animationLoop       :  '.$preferences["animationLoop"].', 
+        pauseOnAction       :  '.$preferences["pauseOnAction"].',
+        pauseOnHover        :  '.$preferences["pauseOnHover"].',
+        controlsContainer   : "",
+        manualControls      : "",
+        start               : function(){},
+        before              : function(){},
+        after               : function(){},
+        end                 : function(){}
+    });
+});
+</script>';
+?>
