@@ -30,13 +30,13 @@
 /**
  * Back end modules
  */
-$GLOBALS['TL_LANG']['MOD']['jedoFlexSlider'] =  array('FlexSlider', 'jQuery Image Slider with Unique Effects');
+$GLOBALS['TL_LANG']['MOD']['jedoFlexSlider'] =  array('jQuery FlexSlider', 'jQuery Image Slider with Unique Effects');
 
 /**
  * Front end modules
  */
-$GLOBALS['TL_LANG']['FMD']['jedoFlexSlider'] = array('FlexSlider','jQuery Image Slider with Unique Effects');
+$GLOBALS['TL_LANG']['FMD']['jedoFlexSlider'] = array('jQuery FlexSlider','jQuery Image Slider with Unique Effects');
 
-$GLOBALS['TL_LANG']['CTE']['jedoFlexSlider'] = array('FlexSlider', 'jQuery Image Slider with Unique Effects');
+$GLOBALS['TL_LANG']['CTE']['jedoFlexSlider'] = array('jQuery FlexSlider', 'jQuery Image Slider with Unique Effects');
 $GLOBALS['TL_LANG']['MOD']['extensions'] = array('jedo Extensions', '');
 ?>

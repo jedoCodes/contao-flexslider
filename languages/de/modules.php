@@ -31,19 +31,19 @@
 /**
  * Content elements
  */
-$GLOBALS['TL_LANG']['CTE']['jedoFlexSlider'] = array('FlexSlider', 'jQuery Bild-Wechsler (Diashow) mit einmaligen Effekten');
+$GLOBALS['TL_LANG']['CTE']['jedoFlexSlider'] = array('jQuery FlexSlider', 'jQuery Bild-Wechsler (Diashow) mit einmaligen Effekten');
 
 
 /**
  * Front end modules
  */
-$GLOBALS['TL_LANG']['FMD']['jedoFlexSlider'] = array('FlexSlider', 'jQuery Bild-Wechsler (Diashow) mit einmaligen Effekten');
+$GLOBALS['TL_LANG']['FMD']['jedoFlexSlider'] = array('jQuery FlexSlider', 'jQuery Bild-Wechsler (Diashow) mit einmaligen Effekten');
 
 
 /**
  * Back end modules
  */
-$GLOBALS['TL_LANG']['MOD']['jedoFlexSlider'] = array('FlexSlider', 'jQuery Bild-Wechsler (Diashow) mit einmaligen Effekten');
+$GLOBALS['TL_LANG']['MOD']['jedoFlexSlider'] = array('jQuery FlexSlider', 'jQuery Bild-Wechsler (Diashow) mit einmaligen Effekten');
 $GLOBALS['TL_LANG']['MOD']['extensions'] = array('jedo Erweiterungen', '');
 
 ?>
