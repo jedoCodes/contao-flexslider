@@ -23,7 +23,7 @@ $GLOBALS['TL_JAVASCRIPT']['jedoFlexiSlider'] = 'system/modules/jedoFlexSlider/ht
 </div>
 
 <?php
-$GLOBALS['TL_MOOTOOLS']['jedoFlexiSlider'] = '<script type="text/javascript">
+$GLOBALS['TL_MOOTOOLS'][] = '<script type="text/javascript">
 jQuery(window).load(function() {
     $(".slider-'.$preferences["id"].'").flexslider({
         animation           : "'.$preferences["animation"].'",
