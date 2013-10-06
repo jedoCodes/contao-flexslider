@@ -379,8 +379,8 @@ class tl_jedoFlexSlider extends Backend {
 					$objFile = new File($objElements->singleSRC);
 					if ($objFile->isGdImage)
 					{
-						$arrElements[$x]['image'] = @$this->getImage($objElements->singleSRC, 100, 50);
 						$x++;
+						$arrElements[$x]['image'] = @$this->getImage($objElements->singleSRC, 100, 50);
 					}
 				}
 	
@@ -460,7 +460,7 @@ class tl_jedoFlexSlider extends Backend {
             $this->redirect($this->getReferer());
         }
 
-        $href .= '&amp;tid='.$row['id'].'&amp;state='.($row['published'] ? '' : 1);
+        $href .= '&tid='.$row['id'].'&state='.($row['published'] ? '' : 1);
 
         if (!$row['published']) {
 

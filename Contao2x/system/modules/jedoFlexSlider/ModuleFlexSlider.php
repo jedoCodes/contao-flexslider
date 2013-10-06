@@ -26,12 +26,22 @@
  * @license    LGPL
  * @version 1.0.0
  */
-class ContentFlexSlider extends ContentElement {
 
+class ModuleFlexSlider extends Module {
+
+    /**
+     * Template
+     * @var string
+     */
     protected $strTemplate = 'FlexSlider';
 
+    /**
+     * Display a wildcard in the back end
+     *
+     * @access public
+     * @return string
+     */
     public function generate() {
-
 	if (TL_MODE == 'BE')
 	{
 		$objBackend  = $this->Database->prepare("SELECT * FROM tl_jedoFlexSlider WHERE id=?")
@@ -54,8 +64,8 @@ class ContentFlexSlider extends ContentElement {
 					$objFile = new File($objElements->singleSRC);
 					if ($objFile->isGdImage)
 					{
-						$arrElements[$x]['image'] = @$this->getImage($objElements->singleSRC, 100, 50);
 						$x++;
+						$arrElements[$x]['image'] = @$this->getImage($objElements->singleSRC, 100, 50);
 					}
 				}
 	
@@ -74,7 +84,7 @@ class ContentFlexSlider extends ContentElement {
 		{
 			$OutputImages = $GLOBALS['TL_LANG']['tl_jedoFlexSlider']['misc_elements'];
 		}
-		return '<div class="tl_gray" style="padding-bottom:6px;"><a href="contao/main.php?do=jedojQueryFlexSlider&amp;table=tl_jedoFlexSliderPictures&amp;id='.$this->select_FlexSlider.'" title="Edit FlexSlider Pictures">' . $objBackend->title . ' (' . count($arrElements) . ' ' . $GLOBALS['TL_LANG']['tl_jedoFlexSlider']['misc_images'] . ')</a></div>
+		return '<div class="tl_gray" style="padding-bottom:6px;"><a href="contao/main.php?do=jedojQueryFlexSlider&table=tl_jedoFlexSliderPictures&id='.$this->select_FlexSlider.'" title="Edit FlexSlider Pictures">' . $objBackend->title . ' (' . count($arrElements) . ' ' . $GLOBALS['TL_LANG']['tl_jedoFlexSlider']['misc_images'] . ')</a></div>
 			' . $OutputImages;
 						   
 	}

@@ -1,7 +1,4 @@
--- 
--- Table `tl_jedoFlexSlider`
--- 
-CREATE TABLE `tl_jedoFlexSlider` (
+CREATE TABLE `tl_jedo-fs-slider` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `pid` int(10) unsigned NOT NULL default '0',
   `sorting` int(10) unsigned NOT NULL default '0',
@@ -32,10 +29,8 @@ CREATE TABLE `tl_jedoFlexSlider` (
   KEY `pid` (`pid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Table `tl_jedoFlexSliderPictures`
---
-CREATE TABLE `tl_jedoFlexSliderPictures` (
+
+CREATE TABLE `tl_jedo-fs-images` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `pid` int(10) unsigned NOT NULL default '0',
   `sorting` int(10) unsigned NOT NULL default '0',
@@ -52,19 +47,11 @@ CREATE TABLE `tl_jedoFlexSliderPictures` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
---
--- Table `tl_module`
---
-
 CREATE TABLE `tl_module` (
-  `select_FlexSlider` int(10) unsigned NOT NULL default '0',
+  `select_jedoflexslider` int(10) unsigned NOT NULL default '0',
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
---
--- Table `tl_content`
---
-
 CREATE TABLE `tl_content` (
-  `select_FlexSlider` int(10) unsigned NOT NULL default '0',
+  `select_jedoflexslider` int(10) unsigned NOT NULL default '0',
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

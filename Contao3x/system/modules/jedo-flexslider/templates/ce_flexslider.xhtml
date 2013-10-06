@@ -1,6 +1,6 @@
 <?php
-$GLOBALS['TL_CSS']['jedoFlexiSlider'] = 'system/modules/jedoFlexSlider/html/flexislider.css';
-$GLOBALS['TL_JAVASCRIPT']['jedoFlexiSlider'] = 'system/modules/jedoFlexSlider/html/jquery.flexslider-min.js';
+$GLOBALS['TL_CSS']['jedoFlexiSlider'] = 'system/modules/jedo-flexslider/public/flexislider.css';
+$GLOBALS['TL_JAVASCRIPT']['jedoFlexiSlider'] = 'system/modules/jedo-flexslider/public/jquery.flexslider-min.js';
 ?>
 <div  class="<?php echo $this->class; ?>  <?php echo $this->sliderdesign; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 <?php if ($this->headline): ?>
@@ -25,7 +25,7 @@ $GLOBALS['TL_JAVASCRIPT']['jedoFlexiSlider'] = 'system/modules/jedoFlexSlider/ht
 <?php
 $GLOBALS['TL_MOOTOOLS'][] = '<script type="text/javascript">
 jQuery(window).load(function() {
-    $(".slider-'.$preferences["id"].'").flexslider({
+jQuery(".slider-'.$preferences["id"].'").flexslider({
         animation           : "'.$preferences["animation"].'",
         slideDirection      : "'.$preferences["slideDirection"].'",
         slideshow           :  '.$preferences["slideshow"].',

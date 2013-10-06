@@ -1,0 +1,141 @@
+<?php
+$GLOBALS['TL_CSS']['jedoFlexSlider'] = 'system/modules/jedo-flexslider/assets/flexslider.css';
+$GLOBALS['TL_JQUERY']['jedoFlexSlider'] = '<script type="text/javascript" src="system/modules/jedo-flexslider/assets/jquery.flexslider-min.js" /></script>';
+$GLOBALS['TL_JQUERY']['jedoFlexSliderVideoFit'] = '<script type="text/javascript" src="system/modules/jedo-flexslider/assets/jquery.fitvid.js" /></script>';
+
+$GLOBALS['TL_JQUERY']['jedoFlexSliderVideo'] = '<script type="text/javascript" src="system/modules/jedo-flexslider/assets/mediaelement-and-player.min.js" /></script>';
+
+?>
+<div  class="<?php echo $this->class; ?> <?php echo $this->sliderdesign; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<?php if ($this->headline): ?>
+	<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+<?php endif; ?>
+<div  class="slider-wrapper block">
+<?php if ($this->ifPictures == true): ?>
+<?php foreach ($this->preferences as $preferences): ?><?php endforeach; ?>
+<div class="slider-<?php echo $preferences['id']; ?> flexslider">
+<?php if($preferences['ribbon'] == "true"): ?><div class="ribbon"></div><?php endif; ?>
+<ul class="slides">
+<?php foreach ($this->pictures as $pictures): ?>
+<?php if ($pictures['sourcetype'] == "imagetype"): ?>
+<li><?php if ($pictures['imageUrl']): ?><a href="<?php echo $pictures['imageUrl'] ?>"><?php endif; ?><img alt="<?php echo $pictures['alt'] ?>" src="<?php echo $pictures['singleSRC'] ?>" /><?php if($preferences['caption'] == "true"): ?><?php if ($pictures['description']): ?><div class="flex-caption"><h4><?php echo $pictures['name'] ?></h4><?php echo $pictures['description'] ?></div><?php endif; ?><?php endif; ?><?php if ($pictures['imageUrl']): ?></a><?php endif; ?></li>
+<?php else: ?>
+
+<li>    <video id="player-1"<?php if ($pictures['imageUrl']): ?> poster="<?php echo $pictures['imageUrl'] ?>" preload="none"<?php endif; ?><?php if ($this->autoplay): ?> autoplay<?php endif; ?> controls>
+        <source type="video/<?php echo $pictures['mime']; ?>" src="<?php echo $pictures['playerSRC'] ?>" title="<?php echo $file->title; ?>">
+    </video></li>
+    
+<?php endif; ?>
+<?php endforeach; ?>
+</ul>
+</div>
+<?php else: echo '<p><strong>' . $GLOBALS['TL_LANG']['MSC']['noImages'] . '</strong></p><br />'; ?>
+<?php endif; ?>
+</div>
+</div>
+
+<?php
+$GLOBALS['TL_JQUERY'][] = '<script type="text/javascript">
+
+jQuery(window).load(function() {
+
+var player = new MediaElementPlayer("#player-1", {
+
+    defaultVideoWidth: 960,
+    defaultVideoHeight: 270,
+    videoWidth: -1,
+    videoHeight: -1,
+    loop: false,
+    enableAutosize: true,
+    features: ["playpause","progress","current","duration","volume"],
+    alwaysShowControls: false,
+    iPadUseNativeControls: false,
+    iPhoneUseNativeControls: false,
+    enableKeyboard: true,
+    pauseOtherPlayers: true
+});
+
+
+jQuery(".slider-'.$preferences["id"].'")
+.fitVids()
+	.flexslider({
+	// Global Settings
+        	animation           : "'.$preferences["animation"].'",
+        	easing           : "'.$preferences["easing"].'",
+        	direction      : "'.$preferences["direction"].'",
+        	reverse      : '.$preferences["reverse"].',
+        	animationLoop       :  '.$preferences["animationLoop"].', 
+        	smoothHeight       :  '.$preferences["smoothHeight"].', 
+        	startAt		        :  '.$preferences["startAt"].',
+        	slideshow           :  '.$preferences["slideshow"].',
+        	slideshowSpeed      :  '.$preferences["slideshowSpeed"].',
+        	animationSpeed   :  '.$preferences["animationSpeed"].',
+        	initDelay :  '.$preferences["initDelay"].',
+        	randomize :  '.$preferences["randomize"].',
+	// Usability features
+         pauseOnAction       :  '.$preferences["pauseOnAction"].',
+         pauseOnHover        :  '.$preferences["pauseOnHover"].',
+         useCSS       :  '.$preferences["useCSS"].',
+         touch        :  '.$preferences["touch"].',
+         video       :  '.$preferences["video"].',
+	// Primary Controls
+	controlNav: '.$preferences["controlNav"].',
+	directionNav: '.$preferences["directionNav"].',
+	prevText: "'.$preferences["prevText"].'",
+	nextText: "'.$preferences["nextText"].'", 
+
+
+
+// Secondary Navigation
+keyboard: '.$preferences["keyboard"].',
+multipleKeyboard: '.$preferences["multipleKeyboard"].',
+mousewheel: '.$preferences["mousewheel"].',
+pausePlay: '.$preferences["pausePlay"].',
+pauseText: "'.$preferences["pauseText"].'",
+playText: "'.$preferences["playText"].'",
+ 
+// Special properties
+controlsContainer: "'.$preferences["pauseText"].'",
+manualControls: "'.$preferences["pauseText"].'",
+sync: "'.$preferences["sync"].'",
+asNavFor: "'.$preferences["asNavFor"].'",
+ 
+// Carousel Options
+itemWidth: "'.$preferences["itemWidth"].'0",
+itemMargin: "'.$preferences["itemMargin"].'0",
+minItems: "'.$preferences["minItems"].'0",
+maxItems: "'.$preferences["maxItems"].'0",
+move: "'.$preferences["move"].'0",
+ 
+// Callback API
+//start: function(){},
+//before: function(){},
+//after: function(){},
+//end: function(){},
+//added: function(){},
+//removed: function(){} 
+
+start: function(".slider-'.$preferences["id"].'") {
+        $(\'body\').removeClass( \'loading\' );
+      },
+before: function (".slider-'.$preferences["id"].'") {
+ 	player.pause();
+      }
+
+
+    });
+
+
+	player.pause(function(){
+		$(".slider-'.$preferences["id"].'").flexslider("play");
+	});
+
+ 	player.play(function(){
+		$(".slider-'.$preferences["id"].'").flexslider("prev");
+	})
+
+
+});
+
+</script>';
+?>

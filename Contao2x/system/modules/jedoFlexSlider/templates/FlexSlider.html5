@@ -25,7 +25,7 @@ $GLOBALS['TL_JAVASCRIPT']['jedoFlexiSlider'] = 'system/modules/jedoFlexSlider/ht
 <?php
 $GLOBALS['TL_MOOTOOLS'][] = '<script type="text/javascript">
 jQuery(window).load(function() {
-    $(".slider-'.$preferences["id"].'").flexslider({
+jQuery(".slider-'.$preferences["id"].'").flexslider({
         animation           : "'.$preferences["animation"].'",
         slideDirection      : "'.$preferences["slideDirection"].'",
         slideshow           :  '.$preferences["slideshow"].',

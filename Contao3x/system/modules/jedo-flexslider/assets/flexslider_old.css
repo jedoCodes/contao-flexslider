@@ -1,0 +1,200 @@
+
+.ce_flexslider {
+	margin-bottom: 10px;
+}
+
+.flex-container a:active, .flexslider a:active {
+	outline: none;
+}
+.slides, .flex-control-nav, .flex-direction-nav {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.flexslider {
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	border: 20px solid #fff;
+}
+.flexslider .slides > li {
+	display: none;
+}
+.flexslider .slides img {
+	height: auto;
+	display: block;
+}
+.flex-pauseplay span {
+	text-transform: capitalize;
+}
+.slides:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+html[xmlns] .slides {
+	display: block;
+}
+* html .slides {
+	height: 1%;
+}
+.no-js .slides > li:first-child {
+	display: block;
+}
+
+.flexslider .slides {
+	zoom: 1;
+}
+.flexslider .slides > li {
+	position: relative;
+}
+.flex-container {
+	zoom: 1;
+	position: relative;
+}
+.flex-caption {
+	background:none;
+	zoom: 1;
+}
+.flex-caption {
+	width: 900px;
+	padding: 8px 10px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-color:#FFF;
+	opacity: .8;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+	-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	color: #2f2f2f;
+	font-size: 13px;
+	line-height: 18px;
+}
+/* Direction Nav */
+.flex-direction-nav li a {
+	width: 23px;
+	height: 23px;
+	display: block;
+	background: url(images/light/slider-arrows.png) no-repeat 0 0;
+	position: absolute;
+	top: 50%;
+	margin-top: -11px;
+	cursor: pointer;
+	text-indent: -9999px;
+	opacity: 0; filter:alpha(opacity=0);
+}
+.flex-direction-nav li .next {
+	background-position: top right;
+	right: 10px;
+}
+.flex-direction-nav li .next:hover {
+	background-position: bottom right;
+}
+.flex-direction-nav li .prev {
+	left: 10px;
+}
+.flex-direction-nav li .prev:hover {
+	background-position: bottom left;
+}
+.flex-direction-nav li .disabled {
+	opacity: .5;
+	filter:alpha(opacity=50);
+	cursor: default;
+}
+.flexslider:hover .flex-direction-nav li a, .flexslider:hover .flex-control-nav li a { opacity: 1; filter:alpha(opacity=100); }
+/* Control Nav */
+.flex-control-nav {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.flex-control-nav li {
+	margin: 0 0 0 5px;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+}
+.flex-control-nav li:first-child {
+	margin: 0;
+}
+.flex-control-nav li a {
+	width: 10px;
+	height: 10px;
+	display: block;
+	background: url(images/light/slider-buttons.png) no-repeat 0 0;
+	cursor: pointer;
+	text-indent: 99999px;
+	opacity: 0.2; filter:alpha(opacity=20);
+}
+.flex-control-nav li a:hover {
+	background-position: 0 -10px;
+}
+.flex-control-nav li a.active {
+	background-position: 0 -10px;
+	cursor: default;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*	SLIDER LIGHT THEME
+/*-----------------------------------------------------------------------------------*/
+
+.light .flexslider {
+	border: 20px solid #fff;
+}
+.light .flex-caption {
+	
+}
+/* Direction Nav */
+.light .flex-direction-nav li a {
+	background: transparent url(images/light/slider-arrows.png) no-repeat 0 0;
+}
+.light .flex-control-nav li a {
+	background: transparent url(images/light/slider-buttons.png) no-repeat 0 0;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	SLIDER DARK THEME
+/*-----------------------------------------------------------------------------------*/
+.dark .flexslider {
+	background: transparent url(images/dark/slider-bg.png) repeat;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-color: transparent;
+}
+.dark .flex-caption {
+	background-color: #000;
+	color: #FFF;
+}
+.dark .flex-direction-nav li a {
+	background-image: url(images/dark/slider-arrows.png);
+}
+.dark .flex-control-nav li a {
+	background-image: url(images/dark/slider-buttons.png);
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*	SLIDER DARK-LIGHT THEME
+/*-----------------------------------------------------------------------------------*/
+.darklight .flexslider {
+	background: transparent url(images/darklight/slider-bg.png) repeat;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-color: transparent;
+}
+.darklight .flex-caption {
+	background-color: #000;
+	color: #FFF;
+}
+.darklight .flex-direction-nav li a {
+	background-image: url(images/darklight/slider-arrows.png);
+}
+.darklight .flex-control-nav li a {
+	background-image: url(images/darklight/slider-buttons.png);
+}
