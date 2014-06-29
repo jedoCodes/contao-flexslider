@@ -62,7 +62,7 @@ class ClassFlexSlider extends \Frontend {
 	
 				$image 	= new \File($objFile->path);
 				$imgSize 	= deserialize($objSlider->size);
-	
+				$meta 		= unserialize($objFile->meta);
 				$srcImage 	= \Image::get($image->path, $imgSize[0], $imgSize[1], $imgSize[2]);
                 			$arrPictures[$objPictures->id] = array(
 					'sourcetype'	=> $objPictures->itemtype,
@@ -70,7 +70,8 @@ class ClassFlexSlider extends \Frontend {
 					'description' 	=> $objPictures->description,
 					'alt' 		=> $objPictures->alt,
 					'imageUrl' 	=> $objPictures->imageUrl,
-					'singleSRC' 	=> $srcImage
+					'singleSRC' 	=> $srcImage,
+					'title'		=> $meta[$GLOBALS['TL_LANGUAGE']]['title']					
 				);
 
             		}
